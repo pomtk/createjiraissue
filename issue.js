@@ -5,9 +5,9 @@ const fetch = require('node-fetch');
 const app = express();
 const fs=require('fs')
 const FormData=require('form-data')
-const projectkey="LEAR"
-const myemail= "trijraj.k@sheru.se"
-const apitoken="ATATT3xFfGF0mrqkR48LtYrbQr6O2slOoMkVdu65hS70cDmUVp-YgtGanLL5dCX4zfTP7WcALTnn82FRfwIXclTSLhcwYsysIiIjl4-7c0ATCmw7dfLo8mLbcvNxU9COIYn_HQ3WqUpiL7rLEhShcwo_IXwDPquSgn1xbYEbtE0ByXstOECxyC8=07DF3450"
+const projectkey="Enquiry"
+const myemail= "abhinav.j@sheru.se"
+const apitoken="ATATT3xFfGF0Pnk5gZUBrNzjIoeSHq3fip8AKkdSrLR7gd7HsqUTWJmJBhUJ2qfMgUQzR2M-dcRlFOT7pPR-ZwlIti4rTgsZWRmZlIEDhNg7i74LkQe9-DWTH504GumoaJ7q4S8EylIHWeP1focimv3rx73K0FshONvq0xECcDwES34sPk1HTdM=07722A5A"
 
 
 
@@ -19,9 +19,9 @@ const bodyData = `{
     },
     "project":
     {
-      "key": "LEAR"
+      "key": "EN"
     },
-    "summary": "self assign test part 2",
+    "summary": "testing for service mangae",
     "description": "testing with aj sir  ",
     "issuetype": {
         "id": "10002"
@@ -30,7 +30,7 @@ const bodyData = `{
 }`;
 
 app.post('/create-jira-issue', (req, res) => {
-  fetch('https://trijraj.atlassian.net/rest/api/2/issue', {
+  fetch('https://sheruorg.atlassian.net/rest/api/2/issue', {
     method: 'POST',
     headers: {
       'Authorization': `Basic ${Buffer.from(
@@ -66,7 +66,7 @@ app.post('/upload-jira-attachment', (req, res) => {
   form.append('file', fileStream, { knownLength: fileSizeInBytes });
 
   fetch(
-    `https://trijraj.atlassian.net/rest/api/3/issue/LEAR-4/attachments`,
+    `https://sheruorg.atlassian.net/rest/api/3/issue/EN-1/attachments`,
     {
       method: 'POST',
       body: form,
