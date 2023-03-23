@@ -6,7 +6,7 @@ const FormData=require('form-data')
 const apiKey = '76679fbe9684813aef29f1266fa34c4058f412be422f64b8';
 const apiToken = 'f4d0421c70e5f386f2059e51dab0fdd3ef7a600f55ed7449';
 let myemail= "trijraj.k@sheru.se"
-let apitoken="ATATT3xFfGF0KugeeQeDyaTtUGS9Rhu-Lo_1qNVcB-DcUag17nSG2cu-s1vqGhMHS115cP2qchfrpFRxF2hVuk3fQEnAAZ4YNuY8vbUmOa1Xj-F9NtOvdRl3sFewZUxo26REySjxk0a7GmdMQ3IljtUia0qpd_0JLVymP_eSFFUC7sNgiq2838A=6CDF19D1"
+let apitoken="ATATT3xFfGF0XQ_ccuAEUT4e8Gd2avmNjqkZ6ALjmXs1K8R6zvrU08l27oXARK7x3TDffyCgZQLXNoHFOSiBLRP16rjD5w2BZonasHspEbChCJ04mAB0VJ631lbKPdX3lbD3l66FTsVAkjkCJf22riDMXTyAY9hhkRJwtrtP2PrYDqhGLWbId-k=BD0DADB3"
 let bodyData = `{
     "fields": {
       "assignee":{
@@ -48,7 +48,7 @@ app.get('/process-call-and-upload', async (req, res) => {
     res.status(500).send(error);
   }
 });
-
+// below in the url after call/<here comes the call reference number>
 function getCallDetails() {
   return new Promise((resolve, reject) => {
    
@@ -70,7 +70,8 @@ function getCallDetails() {
     });
   });
 }
-
+// below in the assignee id paste the one required
+//and the project key change to required 
 function createJiraIssue() {
   return new Promise(async (resolve, reject) => {
     const bodyData = JSON.stringify({
@@ -83,7 +84,7 @@ function createJiraIssue() {
               {
                 "key": "LEAR"
               },
-              "summary": "shaam wali call recording test part 2",
+              "summary": "new test",
               "description": "testing with aj sir with exoappname  ",
               "issuetype": {
                   "id": "10002"
